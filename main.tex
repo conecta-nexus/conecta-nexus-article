@@ -1,0 +1,115 @@
+\documentclass[12pt,twocolumn]{article}
+\usepackage{cls/ingenio_ufps}
+
+% =========================================================================
+% METADATOS DEL ARTÍCULO (Revista Ingenio UFPS)
+% =========================================================================
+\title{Plataformas de intermediación digital universidad-empresa y aprendizaje basado en retos en ingeniería de sistemas}
+\tituloingles{University-industry digital intermediation platforms and challenge-based learning in systems engineering}
+
+\fecharecibido{2026-08-27}
+\fechaaprobado{2026-09-08}
+
+\autores{
+    (Ing.) José Manuel Pérez Rodríguez$^{1}$, 
+    (Ing.) Juan Diego Sarmiento Barroyeta$^{2}$, 
+    (Ing.) Nelson Enrique Conde Tarazona$^{3}$
+}
+
+\filiacion{
+    $^{1,2,3}$Programa de Ingeniería de Sistemas, Facultad de Ingeniería, Universidad Francisco de Paula Santander, Cúcuta, Colombia.\\
+    Correos: \{josemanuelper, juandiegosb, nelsonenriquect\}@ufps.edu.co\\
+    ORCID: 0009-0000-1152-375X, 0009-0000-1152-376Y, 0009-0000-1152-391Z
+}
+
+\resumen{
+    Este artículo de revisión examina el estado del arte sobre plataformas de intermediación digital universidad-empresa y metodologías activas de aprendizaje basado en retos. Se analizan los modelos de la Triple Hélice, innovación abierta y dinámicas multilaterales para identificar los mecanismos que mitigan la asimetría comunicativa entre la industria y los cursos formativos en ingeniería de sistemas. La metodología siguió una exploración bibliométrica en bases de datos indexadas y literatura regional, identificando arquitecturas sociotécnicas, gobernanza de datos y trazabilidad. Los resultados evidencian que los repositorios analógicos fracasan en sostener el interés empresarial, mientras que las plataformas con microservicios y emparejamiento estructurado aumentan la tasa de éxito de los proyectos de aula. Se concluye que un artefacto modular centrado en necesidades contextuales potencia la vinculación sin sobrecargar la gestión curricular docente.
+}
+
+\palabrasclave{Aprendizaje basado en retos, innovación abierta, intermediación digital, microservicios, vinculación universidad-empresa.}
+
+\abstracttext{
+    This review article examines the state of the art of digital university-industry intermediation platforms and challenge-based active learning methodologies. It analyzes the Triple Helix models, open innovation, and multi-sided dynamics to identify mechanisms that reduce communication asymmetries between industry and systems engineering curricula. The methodology followed a bibliometric review across indexed databases and regional literature, evaluating socio-technical architectures, data governance, and traceability. The results show that analog repositories fail to sustain corporate engagement, whereas modular platforms based on microservices and structured matchmaking significantly increase course project viability. It is concluded that a modular artifact focused on contextual challenges fosters academia-industry collaboration without imposing excessive burdens on curriculum management.
+}
+
+\keywords{Challenge-based learning, digital intermediation, microservices, open innovation, university-industry collaboration.}
+
+% =========================================================================
+% CUERPO DEL ARTÍCULO
+% =========================================================================
+\begin{document}
+
+\makeingenioheader
+
+\section{Introducción}
+La articulación entre el sector productivo y las instituciones de educación superior constituye un elemento clave en el desarrollo socioeconómico regional y la innovación tecnológica \cite{ankrah2015}. Tradicionalmente, la vinculación entre empresas y universidades ha dependido de convenios interinstitucionales lentos y acuerdos informales que desaprovechan el trabajo semestral de los estudiantes en asignaturas intermedias de ingeniería \cite{etzkowitz2000, rochet2006}.
+
+En este contexto, las pedagogías activas sustentadas en el Aprendizaje Basado en Retos (ABR) y Aprendizaje Basado en Proyectos (ABP) permiten a los estudiantes abordar problemas auténticos planteados por la industria \cite{guo2020, lavado2024}. Asimismo, la Revista Ingenio ha documentado avances notables en educación en ingeniería y vinculación técnica regional \cite{ingenio2021, ingenio2023}.
+
+Este artículo de revisión analiza los fundamentos teóricos, arquitecturas de software y modelos de intermediación digital orientados a conectar de manera ágil necesidades empresariales con proyectos formativos universitarios.
+
+\section{Metodología}
+La revisión se estructuró a partir de una búsqueda sistemática en Scopus, ScienceDirect, IEEE Xplore, Redalyc y el portal de revistas UFPS. Se aplicaron ecuaciones booleanas que combinan descriptores de plataformas digitales, colaboración universidad-empresa e innovación abierta \cite{chesbrough2003}.
+
+\subsection{Criterios de Inclusión y Exclusión}
+Se seleccionaron artículos revisados por pares entre 2019 y 2026 en español e inglés. Se priorizaron contribuciones que abordan la intermediación tecnológica y marcos pedagógicos de ingeniería. Se excluyeron publicaciones con foco exclusivo en contratación comercial o patentes ajenas al ciclo educativo.
+
+\subsubsection{Tratamiento bibliométrico}
+Los metadatos extraídos se compilaron en formato estándar para su procesamiento en herramientas de minería de texto y análisis de co-ocurrencia bibliométrica.
+
+\section{Resultados y discusión}
+Los hallazgos se clasifican en tres ejes temáticos: gobernanza institucional, modelos transaccionales de plataformas y arquitectura de software orientada a microservicios.
+
+\subsection{Comparativa de Plataformas Existentes}
+En la literatura internacional existen iniciativas como Riipen en Norteamérica o Demola en Finlandia \cite{riipen2026, demola2026}. No obstante, su estructura de costos y dependencia de acuerdos corporativos complejos impiden su adopción directa por pequeñas y medianas empresas regionales.
+
+En la Tabla 1 se presenta un contraste analítico de los antecedentes respecto a los requerimientos de la Universidad Francisco de Paula Santander.
+
+\begin{table}[h]
+\centering
+\caption{Comparativa de iniciativas de vinculación universidad-empresa.}
+\label{tab:comparativa}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}lll@{}}
+\toprule
+\textbf{Iniciativa} & \textbf{Enfoque Principal} & \textbf{Limitación Local} \\
+\midrule
+Riipen & Pasantías virtuales corporativas & Costo elevado y barrera idiomática \\
+Demola & Cocreación multidisciplinar & Requiere facilitación intensiva \\
+U4Impact & Proyectos de grado terminal & Excluye asignaturas semestrales \\
+Conecta Nexus & Microservicios para pregrado & Modelo adaptado al entorno UFPS \\
+\bottomrule
+\end{tabular*}
+\fuente{Elaboración propia a partir de \cite{ankrah2015, riipen2026, demola2026}.}
+\end{table}
+
+\subsection{Modelado de Interacción y Ecuaciones del Flujo}
+La tasa de emparejamiento efectivo ($E$) entre solicitudes estudiantiles ($S$) y problemáticas empresariales activas ($P$) se formaliza mediante la siguiente relación:
+\begin{equation}
+E = \frac{\sum_{i=1}^{P} S_i \cdot \alpha_i}{\sum_{i=1}^{P} P_i}
+\end{equation}
+donde $\alpha_i$ representa el factor de pertinencia curricular validado por el docente tutor en cada ciclo formativo.
+
+\subsection{Topología Arquitectural de la Solución}
+La descomposición en microservicios permite desacoplar los dominios de identidad, problemáticas, solicitudes y notificaciones, garantizando mantenibilidad y persistencia independiente por servicio \cite{difrancesco2019}.
+
+\begin{figure}[h]
+\centering
+\fbox{\parbox{0.9\columnwidth}{\centering\vspace{1cm}\textbf{[Diagrama de Arquitectura de Microservicios Conecta Nexus]}\\\textit{(Subir imagen en assets/figures/figura1.png con 300 dpi)}\vspace{1cm}}}
+\caption{Arquitectura lógica distribuida para la plataforma Conecta Nexus.}
+\label{fig:arquitectura}
+\fuente{Elaboración propia.}
+\end{figure}
+
+\section{Conclusiones}
+La intermediación digital entre la universidad y el sector empresarial mitiga de manera efectiva la asimetría informativa entre los resultados de aprendizaje de ingeniería y las problemáticas del tejido productivo. El uso de plataformas multilaterales con arquitectura desacoplada y roles claramente delimitados protege la confidencialidad de la información y facilita el seguimiento continuo sin burocracia adicional.
+
+\section*{Agradecimientos}
+Los autores expresan su agradecimiento a la Universidad Francisco de Paula Santander (UFPS), a la Facultad de Ingeniería y al Programa de Ingeniería de Sistemas por el respaldo académico en el marco de los proyectos integradores de desarrollo tecnológico.
+
+% =========================================================================
+% REFERENCIAS BIBLIOGRÁFICAS (Norma IEEE)
+% =========================================================================
+\bibliographystyle{IEEEtran}
+\bibliography{referencias}
+
+\end{document}

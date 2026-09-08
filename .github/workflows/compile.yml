@@ -1,0 +1,32 @@
+name: Compilar Articulo Ingenio UFPS
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build-latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Compilar LaTeX a PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+
+      - name: Renombrar PDF generado
+        run: |
+          mv main.pdf Articulo_Revision_Ingenio_UFPS.pdf
+
+      - name: Publicar PDF como artefacto descargable
+        uses: actions/upload-artifact@v4
+        with:
+          name: Articulo-Ingenio-UFPS-PDF
+          path: Articulo_Revision_Ingenio_UFPS.pdf
+          retention-days: 30

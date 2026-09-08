@@ -1,0 +1,155 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{cls/ingenio_ufps}[2026/09/08 v1.0 Plantilla Oficial Revista Ingenio UFPS]
+
+% --- Geometría de Página (Carta, márgenes de 2 cm) ---
+\RequirePackage{geometry}
+\geometry{
+    paperwidth=21.59cm,
+    paperheight=27.94cm,
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm,
+    columnsep=0.75cm
+}
+
+% --- Tipografía Times New Roman ---
+\RequirePackage{mathptmx} % Times New Roman para texto y matemáticas
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[spanish,es-nodecimaldot,es-tabla]{babel}
+
+% --- Interlineado y Párrafos ---
+\RequirePackage{setspace}
+\singlespacing % Interlineado 1.0
+\setlength{\parindent}{5mm} % Sangría de 5 mm
+\setlength{\parskip}{0.5\baselineskip} % Espaciado equilibrado entre párrafos
+
+% --- Paquetes Esenciales ---
+\RequirePackage{amsmath,amsfonts,amssymb}
+\RequirePackage{graphicx}
+\RequirePackage{booktabs}
+\RequirePackage{cite}
+\RequirePackage{microtype}
+\RequirePackage{fancyhdr}
+\RequirePackage{titlesec}
+\RequirePackage{caption}
+\RequirePackage{etoolbox}
+\RequirePackage{xcolor}
+\RequirePackage[colorlinks=true,allcolors=blue]{hyperref}
+
+% --- Configuración de Encabezados y Pies de Página ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\small\textit{Revista Ingenio}, ISSN 2011-6047, e-ISSN 2389-8658}
+\fancyhead[RE,LO]{\small Universidad Francisco de Paula Santander}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Encabezado especial para la primera página
+\fancypagestyle{firstpage}{
+    \fancyhf{}
+    \fancyhead[L]{\small\textbf{Revista Ingenio UFPS}\\Revisión de Tema / Review Paper}
+    \fancyhead[R]{\small Recibido: \@fecharecibido\\Aprobado: \@fechaaprobado}
+    \fancyfoot[C]{\small\thepage}
+    \renewcommand{\headrulewidth}{0.5pt}
+    \renewcommand{\footrulewidth}{0.5pt}
+}
+
+% --- Variables para Metadatos del Manuscrito ---
+\newcommand{\fecharecibido}[1]{\def\@fecharecibido{#1}}
+\newcommand{\fechaaprobado}[1]{\def\@fechaaprobado{#1}}
+\newcommand{\tituloingles}[1]{\def\@tituloingles{#1}}
+\newcommand{\autores}[1]{\def\@autores{#1}}
+\newcommand{\filiacion}[1]{\def\@filiacion{#1}}
+
+\newcommand{\resumen}[1]{\def\@resumen{#1}}
+\newcommand{\palabrasclave}[1]{\def\@palabrasclave{#1}}
+\newcommand{\abstracttext}[1]{\def\@abstracttext{#1}}
+\newcommand{\keywords}[1]{\def\@keywords{#1}}
+
+% --- Formato de Títulos y Encabezados ---
+% Sección: 12 pt, Negrita, numerado con punto
+\titleformat{\section}
+  {\fontsize{12}{14}\selectfont\bfseries}
+  {\thesection.}
+  {0.5em}
+  {}
+\titlespacing*{\section}{0pt}{1\baselineskip}{0pt}
+
+% Subsección: 12 pt, Normal (sin negrita)
+\titleformat{\subsection}
+  {\fontsize{12}{14}\selectfont\normalfont}
+  {\thesubsection}
+  {0.5em}
+  {}
+\titlespacing*{\subsection}{0pt}{1\baselineskip}{0pt}
+
+% Sub-subsección: 12 pt, Cursiva, Run-in (continúa en la misma línea)
+\titleformat{\subsubsection}[runin]
+  {\fontsize{12}{14}\selectfont\itshape}
+  {\thesubsubsection.}
+  {0.5em}
+  {}[.\hspace{0.5em}]
+\titlespacing*{\subsubsection}{0pt}{0.5\baselineskip}{0pt}
+
+% --- Tablas y Figuras (TNR 10 pt) ---
+\captionsetup[table]{
+    font={footnotesize},
+    labelfont={bf},
+    labelsep=period,
+    justification=raggedright,
+    singlelinecheck=false,
+    skip=4pt
+}
+
+\captionsetup[figure]{
+    font={footnotesize},
+    labelfont={bf},
+    labelsep=period,
+    justification=centering,
+    skip=6pt
+}
+
+% Macro para fuente de tablas y figuras
+\newcommand{\fuente}[1]{%
+    \vspace{2pt}%
+    \begin{center}%
+        \footnotesize \textit{Fuente:} #1%
+    \end{center}%
+}
+
+% --- Portada a Ancho Completo ---
+\newcommand{\makeingenioheader}{
+    \twocolumn[
+        \begin{center}
+            \vspace*{-1cm}
+            {\fontsize{16}{19}\selectfont\bfseries \@title \par}
+            \vspace{6pt}
+            {\fontsize{12}{14}\selectfont\textit{\@tituloingles} \par}
+            \vspace{12pt}
+            {\fontsize{11}{13}\selectfont \@autores \par}
+            \vspace{6pt}
+            {\fontsize{9}{11}\selectfont \textit{\@filiacion} \par}
+            \vspace{12pt}
+        \end{center}
+
+        \begin{quotation}
+            \fontsize{10}{12}\selectfont
+            \textbf{Resumen---} \@resumen \par
+            \vspace{4pt}
+            \textbf{Palabras clave---} \@palabrasclave
+            \vspace{10pt}
+            \hrule
+            \vspace{10pt}
+            \textbf{Abstract---} \@abstracttext \par
+            \vspace{4pt}
+            \textbf{Keywords---} \@keywords
+        \end{quotation}
+        \vspace{12pt}
+        \hrule
+        \vspace{18pt}
+    ]
+    \thispagestyle{firstpage}
+}
