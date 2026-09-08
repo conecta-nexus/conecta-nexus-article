@@ -1,6 +1,16 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{cls/ingenio_ufps}[2026/09/08 v2.0 Plantilla Oficial Revista Ingenio UFPS]
 
+% --- Paquetes Básicos y Colores ---
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[spanish,es-nodecimaldot,es-tabla]{babel}
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+
+% --- Definición de Colores Institucionales ---
+\definecolor{issngold}{RGB}{191,143,0}
+\definecolor{headergray}{RGB}{190,190,190}
+
 % --- Geometría de Página (Carta, márgenes de 2 cm) ---
 \RequirePackage{geometry}
 \geometry{
@@ -9,19 +19,17 @@
     paperheight=27.94cm,
     left=2.0cm,
     right=2.0cm,
-    top=3.0cm,         % Espacio para encabezado gráfico
-    bottom=2.4cm,      % Espacio para cintillo inferior
-    headheight=2.0cm,
-    headsep=0.4cm,
-    footskip=1.4cm,
+    top=4.0cm,         % Espacio para encabezado gráfico completo
+    bottom=3.2cm,      % Espacio para cintillo inferior
+    headheight=2.8cm,
+    headsep=0.35cm,
+    footskip=2.0cm,
     columnsep=0.75cm
 }
 
 % --- Tipografía Times New Roman ---
 \RequirePackage{newtxtext,newtxmath}
 \RequirePackage{mathptmx}
-\RequirePackage[utf8]{inputenc}
-\RequirePackage[spanish,es-nodecimaldot,es-tabla]{babel}
 
 % --- Interlineado y Sangría ---
 \RequirePackage{setspace}
@@ -29,16 +37,13 @@
 \setlength{\parindent}{5mm}             % Sangría de 5 mm
 \setlength{\parskip}{0.5\baselineskip}  % Distancia entre párrafos
 
-% --- Paquetes para Gráficos y Encabezados ---
-\RequirePackage{graphicx}
-\RequirePackage{tikz}
+% --- Paquetes para Formato y Encabezados ---
 \RequirePackage{fancyhdr}
 \RequirePackage{booktabs}
 \RequirePackage{caption}
 \RequirePackage{titlesec}
 \RequirePackage{cite}
 \RequirePackage{microtype}
-\RequirePackage{xcolor}
 \RequirePackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 
 % Calibre de líneas para tablas (0.5 pt según plantilla oficial)
@@ -68,48 +73,44 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Encabezado Oficial con image1.jpg (fondo) + image2.jpg (logo) + textos ISSN
+% Encabezado Oficial con logos proporcionados, ISSN y metadatos
 \fancyhead[C]{%
-  \IfFileExists{assets/brand/image1.jpg}{%
-    \begin{tikzpicture}[remember picture, overlay]
-      \node[anchor=north, yshift=-0.5cm] at (current page.north) {%
-        \begin{tikzpicture}
-          \node[inner sep=0pt] (banner) {%
-            \includegraphics[width=\textwidth, height=1.9cm, keepaspectratio=false]{assets/brand/image1.jpg}%
-          };
-          \IfFileExists{assets/brand/image2.jpg}{%
-            \node[anchor=north east, inner sep=0pt, xshift=-0.2cm, yshift=-0.1cm] at (banner.north east) {%
-              \includegraphics[height=1.25cm, keepaspectratio]{assets/brand/image2.jpg}%
-            };
-          }{}%
-          \node[anchor=south east, inner sep=0pt, xshift=-0.2cm, yshift=0.15cm] at (banner.south east) {%
-            \fontsize{7.5}{9}\selectfont\sffamily\bfseries
-            \begin{tabular}{@{}r@{}}
-              ISSN: 2422-1783 \quad ISSN: 2389-864X (En línea) \\
-              Revista Ingenio, Vol. \@volumen. Mes \@periodo
-            \end{tabular}%
-          };
-        \end{tikzpicture}%
-      };
-    \end{tikzpicture}%
-  }{% Fallback textual si no existe el archivo
-    \small\sffamily
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr@{}}
-      \textbf{Universidad Francisco de Paula Santander} & ISSN: 2422-1783 / e-ISSN: 2389-864X \\
-      Ocaña - Colombia & Revista Ingenio, Vol. \@volumen. Mes \@periodo
-    \end{tabular*}
-    \vspace{2pt}\hrule
-  }%
+  \begin{minipage}[b]{\textwidth}
+    \centering
+    \begin{minipage}[b]{0.52\textwidth}
+      \IfFileExists{assets/brand/ufps_header_logo.png}{%
+        \includegraphics[height=1.45cm, keepaspectratio]{assets/brand/ufps_header_logo.png}%
+      }{%
+        \IfFileExists{assets/brand/image1.jpg}{%
+          \includegraphics[trim={0 0 1400bp 0}, clip, height=1.45cm, keepaspectratio]{assets/brand/image1.jpg}%
+        }{%
+          \textbf{Universidad Francisco de Paula Santander}%
+        }%
+      }%
+    \end{minipage}%
+    \hfill%
+    \begin{minipage}[b]{0.45\textwidth}
+      \raggedleft
+      \IfFileExists{assets/brand/image2.jpg}{%
+        \includegraphics[height=1.35cm, keepaspectratio]{assets/brand/image2.jpg}%
+      }{%
+        \textbf{Revista Ingenio}%
+      }%
+    \end{minipage}%
+    \par\vspace{2pt}%
+    {\color{headergray}\hrule height 0.6pt}%
+    \vspace{4pt}%
+    \noindent\makebox[0.5\textwidth][c]{\fontsize{8.5}{10.5}\selectfont\color{issngold}\textbf{ISSN: 2422-1783}}%
+    \makebox[0.5\textwidth][c]{\fontsize{8.5}{10.5}\selectfont\color{issngold}\textbf{ISSN: 2389-864X (En línea)}}%
+    \par\vspace{2.5pt}%
+    {\fontsize{8.5}{10.5}\selectfont Revista Ingenio, Vol. \@volumen. Mes \@periodo\par}%
+  \end{minipage}%
 }
 
-% Pie de página Oficial con image3.jpeg
+% Pie de página Oficial sin deformación horizontal (proporcional y centrado)
 \fancyfoot[C]{%
   \IfFileExists{assets/brand/image3.jpeg}{%
-    \begin{tikzpicture}[remember picture, overlay]
-      \node[anchor=south, yshift=0.45cm] at (current page.south) {%
-        \includegraphics[width=\textwidth, height=1.35cm, keepaspectratio=false]{assets/brand/image3.jpeg}%
-      };
-    \end{tikzpicture}%
+    \includegraphics[width=15.8cm, keepaspectratio]{assets/brand/image3.jpeg}%
   }{% Fallback textual
     \footnotesize\sffamily
     \hrule\vspace{3pt}
