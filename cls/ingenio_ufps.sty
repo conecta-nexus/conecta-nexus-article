@@ -1,76 +1,131 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{cls/ingenio_ufps}[2026/09/08 v1.0 Plantilla Oficial Revista Ingenio UFPS]
+\ProvidesPackage{cls/ingenio_ufps}[2026/09/08 v2.0 Plantilla Oficial Revista Ingenio UFPS]
 
 % --- Geometría de Página (Carta, márgenes de 2 cm) ---
 \RequirePackage{geometry}
 \geometry{
+    letterpaper,
     paperwidth=21.59cm,
     paperheight=27.94cm,
-    top=2cm,
-    bottom=2cm,
-    left=2cm,
-    right=2cm,
+    left=2.0cm,
+    right=2.0cm,
+    top=3.0cm,         % Espacio para encabezado gráfico
+    bottom=2.4cm,      % Espacio para cintillo inferior
+    headheight=2.0cm,
+    headsep=0.4cm,
+    footskip=1.4cm,
     columnsep=0.75cm
 }
 
 % --- Tipografía Times New Roman ---
-\RequirePackage{mathptmx} % Times New Roman para texto y matemáticas
-\RequirePackage[T1]{fontenc}
+\RequirePackage{newtxtext,newtxmath}
+\RequirePackage{mathptmx}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[spanish,es-nodecimaldot,es-tabla]{babel}
 
-% --- Interlineado y Párrafos ---
+% --- Interlineado y Sangría ---
 \RequirePackage{setspace}
-\singlespacing % Interlineado 1.0
-\setlength{\parindent}{5mm} % Sangría de 5 mm
-\setlength{\parskip}{0.5\baselineskip} % Espaciado equilibrado entre párrafos
+\singlespacing                          % Interlineado sencillo (1.0)
+\setlength{\parindent}{5mm}             % Sangría de 5 mm
+\setlength{\parskip}{0.5\baselineskip}  % Distancia entre párrafos
 
-% --- Paquetes Esenciales ---
-\RequirePackage{amsmath,amsfonts,amssymb}
+% --- Paquetes para Gráficos y Encabezados ---
 \RequirePackage{graphicx}
+\RequirePackage{tikz}
+\RequirePackage{fancyhdr}
 \RequirePackage{booktabs}
+\RequirePackage{caption}
+\RequirePackage{titlesec}
 \RequirePackage{cite}
 \RequirePackage{microtype}
-\RequirePackage{fancyhdr}
-\RequirePackage{titlesec}
-\RequirePackage{caption}
-\RequirePackage{etoolbox}
 \RequirePackage{xcolor}
-\RequirePackage[colorlinks=true,allcolors=blue]{hyperref}
+\RequirePackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 
-% --- Configuración de Encabezados y Pies de Página ---
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[LE,RO]{\small\textit{Revista Ingenio}, ISSN 2011-6047, e-ISSN 2389-8658}
-\fancyhead[RE,LO]{\small Universidad Francisco de Paula Santander}
-\fancyfoot[C]{\small\thepage}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
+% Calibre de líneas para tablas (0.5 pt según plantilla oficial)
+\setlength{\heavyrulewidth}{0.5pt}
+\setlength{\lightrulewidth}{0.5pt}
 
-% Encabezado especial para la primera página
-\fancypagestyle{firstpage}{
-    \fancyhf{}
-    \fancyhead[L]{\small\textbf{Revista Ingenio UFPS}\\Revisión de Tema / Review Paper}
-    \fancyhead[R]{\small Recibido: \@fecharecibido\\Aprobado: \@fechaaprobado}
-    \fancyfoot[C]{\small\thepage}
-    \renewcommand{\headrulewidth}{0.5pt}
-    \renewcommand{\footrulewidth}{0.5pt}
-}
-
-% --- Variables para Metadatos del Manuscrito ---
-\newcommand{\fecharecibido}[1]{\def\@fecharecibido{#1}}
-\newcommand{\fechaaprobado}[1]{\def\@fechaaprobado{#1}}
+% --- Variables de Metadatos ---
+\newcommand{\volumen}[1]{\def\@volumen{#1}}
+\newcommand{\periodo}[1]{\def\@periodo{#1}}
 \newcommand{\tituloingles}[1]{\def\@tituloingles{#1}}
 \newcommand{\autores}[1]{\def\@autores{#1}}
 \newcommand{\filiacion}[1]{\def\@filiacion{#1}}
-
+\newcommand{\fecharecibido}[1]{\def\@fecharecibido{#1}}
+\newcommand{\fechaaprobado}[1]{\def\@fechaaprobado{#1}}
 \newcommand{\resumen}[1]{\def\@resumen{#1}}
 \newcommand{\palabrasclave}[1]{\def\@palabrasclave{#1}}
 \newcommand{\abstracttext}[1]{\def\@abstracttext{#1}}
 \newcommand{\keywords}[1]{\def\@keywords{#1}}
 
-% --- Formato de Títulos y Encabezados ---
-% Sección: 12 pt, Negrita, numerado con punto
+% Valores por defecto según extracción de header2.xml
+\volumen{X}
+\periodo{Enero - Junio}
+
+% --- Definición de Encabezado y Pie de Página Institucional ---
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Encabezado Oficial con image1.jpg (fondo) + image2.jpg (logo) + textos ISSN
+\fancyhead[C]{%
+  \IfFileExists{assets/brand/image1.jpg}{%
+    \begin{tikzpicture}[remember picture, overlay]
+      \node[anchor=north, yshift=-0.5cm] at (current page.north) {%
+        \begin{tikzpicture}
+          \node[inner sep=0pt] (banner) {%
+            \includegraphics[width=\textwidth, height=1.9cm, keepaspectratio=false]{assets/brand/image1.jpg}%
+          };
+          \IfFileExists{assets/brand/image2.jpg}{%
+            \node[anchor=north east, inner sep=0pt, xshift=-0.2cm, yshift=-0.1cm] at (banner.north east) {%
+              \includegraphics[height=1.25cm, keepaspectratio]{assets/brand/image2.jpg}%
+            };
+          }{}%
+          \node[anchor=south east, inner sep=0pt, xshift=-0.2cm, yshift=0.15cm] at (banner.south east) {%
+            \fontsize{7.5}{9}\selectfont\sffamily\bfseries
+            \begin{tabular}{@{}r@{}}
+              ISSN: 2422-1783 \quad ISSN: 2389-864X (En línea) \\
+              Revista Ingenio, Vol. \@volumen. Mes \@periodo
+            \end{tabular}%
+          };
+        \end{tikzpicture}%
+      };
+    \end{tikzpicture}%
+  }{% Fallback textual si no existe el archivo
+    \small\sffamily
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr@{}}
+      \textbf{Universidad Francisco de Paula Santander} & ISSN: 2422-1783 / e-ISSN: 2389-864X \\
+      Ocaña - Colombia & Revista Ingenio, Vol. \@volumen. Mes \@periodo
+    \end{tabular*}
+    \vspace{2pt}\hrule
+  }%
+}
+
+% Pie de página Oficial con image3.jpeg
+\fancyfoot[C]{%
+  \IfFileExists{assets/brand/image3.jpeg}{%
+    \begin{tikzpicture}[remember picture, overlay]
+      \node[anchor=south, yshift=0.45cm] at (current page.south) {%
+        \includegraphics[width=\textwidth, height=1.35cm, keepaspectratio=false]{assets/brand/image3.jpeg}%
+      };
+    \end{tikzpicture}%
+  }{% Fallback textual
+    \footnotesize\sffamily
+    \hrule\vspace{3pt}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr@{}}
+      Vía Acolsure, Sede el Algodonal, Ocaña, Colombia & PBX: (+57) (7) 569 00 88 \\
+      atencionalciudadano@ufpso.edu.co & www.ufpso.edu.co
+    \end{tabular*}
+  }%
+}
+
+% --- Formato de Secciones y Jerarquía ---
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+% Sección: 12 pt, Negrita, sin punto final, 1 espacio antes, 0 después
 \titleformat{\section}
   {\fontsize{12}{14}\selectfont\bfseries}
   {\thesection.}
@@ -78,7 +133,7 @@
   {}
 \titlespacing*{\section}{0pt}{1\baselineskip}{0pt}
 
-% Subsección: 12 pt, Normal (sin negrita)
+% Subsección: 12 pt, Normal (sin negrita), 1 espacio antes, 0 después
 \titleformat{\subsection}
   {\fontsize{12}{14}\selectfont\normalfont}
   {\thesubsection}
@@ -86,17 +141,20 @@
   {}
 \titlespacing*{\subsection}{0pt}{1\baselineskip}{0pt}
 
-% Sub-subsección: 12 pt, Cursiva, Run-in (continúa en la misma línea)
+% Sub-subsección: 12 pt, Cursiva, Run-in (texto en la misma línea)
 \titleformat{\subsubsection}[runin]
   {\fontsize{12}{14}\selectfont\itshape}
   {\thesubsubsection.}
   {0.5em}
-  {}[.\hspace{0.5em}]
-\titlespacing*{\subsubsection}{0pt}{0.5\baselineskip}{0pt}
+  {}[.]
+\titlespacing*{\subsubsection}{0pt}{0.5\baselineskip}{0.5em}
 
-% --- Tablas y Figuras (TNR 10 pt) ---
+% Asegurar que el primer párrafo post-sección NO tenga sangría
+\titleformat{\paragraph}[runin]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+
+% --- Formato de Tablas y Figuras (Times New Roman 10 pt) ---
 \captionsetup[table]{
-    font={footnotesize},
+    font={small},
     labelfont={bf},
     labelsep=period,
     justification=raggedright,
@@ -105,51 +163,52 @@
 }
 
 \captionsetup[figure]{
-    font={footnotesize},
+    font={small},
     labelfont={bf},
     labelsep=period,
     justification=centering,
     skip=6pt
 }
 
-% Macro para fuente de tablas y figuras
+% Macro para la fuente según IEEE
 \newcommand{\fuente}[1]{%
-    \vspace{2pt}%
-    \begin{center}%
-        \footnotesize \textit{Fuente:} #1%
-    \end{center}%
+  \vspace{2pt}%
+  \begin{flushleft}%
+    \fontsize{9}{11}\selectfont \textit{Fuente:} #1%
+  \end{flushleft}%
 }
 
-% --- Portada a Ancho Completo ---
-\newcommand{\makeingenioheader}{
-    \twocolumn[
-        \begin{center}
-            \vspace*{-1cm}
-            {\fontsize{16}{19}\selectfont\bfseries \@title \par}
-            \vspace{6pt}
-            {\fontsize{12}{14}\selectfont\textit{\@tituloingles} \par}
-            \vspace{12pt}
-            {\fontsize{11}{13}\selectfont \@autores \par}
-            \vspace{6pt}
-            {\fontsize{9}{11}\selectfont \textit{\@filiacion} \par}
-            \vspace{12pt}
-        \end{center}
-
-        \begin{quotation}
-            \fontsize{10}{12}\selectfont
-            \textbf{Resumen---} \@resumen \par
-            \vspace{4pt}
-            \textbf{Palabras clave---} \@palabrasclave
-            \vspace{10pt}
-            \hrule
-            \vspace{10pt}
-            \textbf{Abstract---} \@abstracttext \par
-            \vspace{4pt}
-            \textbf{Keywords---} \@keywords
-        \end{quotation}
-        \vspace{12pt}
-        \hrule
-        \vspace{18pt}
-    ]
-    \thispagestyle{firstpage}
+% --- Encabezado Inicial del Manuscrito ---
+\newcommand{\makeingenioheader}{%
+  \twocolumn[%
+    \vspace*{-0.4cm}
+    % Título en español: 16 pt negrita, solo mayúscula inicial
+    {\fontsize{16}{19}\selectfont\bfseries\raggedright \@title \par}
+    \vspace{6pt}
+    % Título en inglés: 12 pt normal
+    {\fontsize{12}{14}\selectfont\raggedright \@tituloingles \par}
+    \vspace{10pt}
+    % Autores
+    {\fontsize{11}{13}\selectfont\raggedright \@autores \par}
+    \vspace{6pt}
+    % Filiación institucional y ORCID
+    {\fontsize{9}{11}\selectfont\raggedright \@filiacion \par}
+    \vspace{6pt}
+    % Fechas
+    {\fontsize{9}{11}\selectfont\raggedright 
+      \textbf{Fecha de recibido:} \@fecharecibido \quad 
+      \textbf{Fecha aprobación:} \@fechaaprobado \par}
+    \vspace{12pt}
+    % Resumen y Palabras clave (10 pt justificado)
+    {\fontsize{10}{12}\selectfont
+      \noindent\textbf{Resumen:} \@resumen \par
+      \vspace{4pt}
+      \noindent\textbf{Palabras claves:} \@palabrasclave \par
+      \vspace{8pt}
+      \noindent\textbf{Abstract:} \@abstracttext \par
+      \vspace{4pt}
+      \noindent\textbf{Keywords:} \@keywords \par
+    }
+    \vspace{14pt}
+  ]
 }
