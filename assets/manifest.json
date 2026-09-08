@@ -1,0 +1,51 @@
+{
+  "origen": "plantilla_ingenio.docx",
+  "media": [
+    {
+      "archivo": "assets/brand/image4.jpeg",
+      "nombre": "image4.jpeg",
+      "tamano_kb": 94.77,
+      "tipo": "brand_header_footer"
+    },
+    {
+      "archivo": "assets/figures/image6.png",
+      "nombre": "image6.png",
+      "tamano_kb": 168.03,
+      "tipo": "body_figure"
+    },
+    {
+      "archivo": "assets/figures/image5.wmf",
+      "nombre": "image5.wmf",
+      "tamano_kb": 1.35,
+      "tipo": "body_figure"
+    },
+    {
+      "archivo": "assets/brand/image2.jpg",
+      "nombre": "image2.jpg",
+      "tamano_kb": 312.34,
+      "tipo": "brand_header_footer"
+    },
+    {
+      "archivo": "assets/brand/image1.jpg",
+      "nombre": "image1.jpg",
+      "tamano_kb": 171.79,
+      "tipo": "brand_header_footer"
+    },
+    {
+      "archivo": "assets/brand/image3.jpeg",
+      "nombre": "image3.jpeg",
+      "tamano_kb": 197.61,
+      "tipo": "brand_header_footer"
+    }
+  ],
+  "encabezados": {
+    "word/header1.xml": [
+      "Nombre del artículo – Nombre del autor"
+    ],
+    "word/header2.xml": [
+      "ISSN: 2422-1783                                ISSN: 2389-864X (En línea)",
+      "Revista Ingenio, Vol. X. Mes Enero - Junio"
+    ]
+  },
+  "pies_de_pagina": {}
+}

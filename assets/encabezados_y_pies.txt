@@ -1,0 +1,16 @@
+====================================================
+TEXTOS DE ENCABEZADO Y PIE EXTRAÍDOS DE LA PLANTILLA
+====================================================
+
+--- ENCABEZADOS (HEADERS) ---
+
+[word/header1.xml]
+  * Nombre del artículo – Nombre del autor
+
+[word/header2.xml]
+  * ISSN: 2422-1783                                ISSN: 2389-864X (En línea)
+  * Revista Ingenio, Vol. X. Mes Enero - Junio
+
+
+--- PIES DE PÁGINA (FOOTERS) ---
+No se detectó texto estático en pies de página.
