@@ -11,19 +11,21 @@
 \definecolor{issngold}{RGB}{191,143,0}
 \definecolor{headergray}{RGB}{190,190,190}
 
-% --- Geometría de Página (Carta, márgenes de 2 cm) ---
+% --- Geometría de Página (Carta, 4 márgenes de 2.0 cm) ---
 \RequirePackage{geometry}
 \geometry{
     letterpaper,
     paperwidth=21.59cm,
     paperheight=27.94cm,
-    left=2.0cm,
+    left=3.0cm,
     right=2.0cm,
-    top=4.0cm,         % Espacio para encabezado gráfico completo
-    bottom=3.2cm,      % Espacio para cintillo inferior
-    headheight=2.8cm,
-    headsep=0.35cm,
-    footskip=2.0cm,
+    top=2.0cm,
+    bottom=2.0cm,
+    includehead,
+    includefoot,
+    headheight=3.1cm,
+    headsep=0.45cm,
+    footskip=1.4cm,
     columnsep=0.75cm
 }
 
@@ -34,12 +36,14 @@
 % --- Interlineado y Sangría ---
 \RequirePackage{setspace}
 \singlespacing                          % Interlineado sencillo (1.0)
-\setlength{\parindent}{5mm}             % Sangría de 5 mm
-\setlength{\parskip}{0.5\baselineskip}  % Distancia entre párrafos
+\setlength{\parindent}{5mm}             % Sangría de 5 mm para párrafos siguientes
+\setlength{\parskip}{1\baselineskip}    % Distancia entre párrafos de una línea
 
 % --- Paquetes para Formato y Encabezados ---
 \RequirePackage{fancyhdr}
 \RequirePackage{booktabs}
+\RequirePackage{tabularx}
+\RequirePackage{array}
 \RequirePackage{caption}
 \RequirePackage{titlesec}
 \RequirePackage{cite}
@@ -66,6 +70,8 @@
 % Valores por defecto según extracción de header2.xml
 \volumen{X}
 \periodo{Enero - Junio}
+\def\@fecharecibido{}
+\def\@fechaaprobado{}
 
 % --- Definición de Encabezado y Pie de Página Institucional ---
 \pagestyle{fancy}
@@ -75,35 +81,42 @@
 
 % Encabezado Oficial con logos proporcionados, ISSN y metadatos
 \fancyhead[C]{%
+  \hspace*{-1.5cm}%
   \begin{minipage}[b]{\textwidth}
     \centering
-    \begin{minipage}[b]{0.52\textwidth}
-      \IfFileExists{assets/brand/ufps_header_logo.png}{%
-        \includegraphics[height=1.45cm, keepaspectratio]{assets/brand/ufps_header_logo.png}%
+    \begin{minipage}[t]{7.55cm}
+      \raggedright
+      \IfFileExists{assets/brand/ufps_header_logo_cropped.png}{%
+        \includegraphics[height=1.85cm, keepaspectratio]{assets/brand/ufps_header_logo_cropped.png}%
       }{%
-        \IfFileExists{assets/brand/image1.jpg}{%
-          \includegraphics[trim={0 0 1400bp 0}, clip, height=1.45cm, keepaspectratio]{assets/brand/image1.jpg}%
+        \IfFileExists{assets/brand/ufps_header_logo.png}{%
+          \includegraphics[height=1.85cm, keepaspectratio]{assets/brand/ufps_header_logo.png}%
         }{%
           \textbf{Universidad Francisco de Paula Santander}%
         }%
-      }%
-    \end{minipage}%
-    \hfill%
-    \begin{minipage}[b]{0.45\textwidth}
+      }\par
+      \vspace{4pt}
       \raggedleft
-      \IfFileExists{assets/brand/image2.jpg}{%
-        \includegraphics[height=1.35cm, keepaspectratio]{assets/brand/image2.jpg}%
-      }{%
-        \textbf{Revista Ingenio}%
-      }%
+      {\fontsize{9.5}{11.5}\selectfont\color{issngold}\textbf{ISSN: 2422-1783}\par}
     \end{minipage}%
-    \par\vspace{2pt}%
-    {\color{headergray}\hrule height 0.6pt}%
-    \vspace{4pt}%
-    \noindent\makebox[0.5\textwidth][c]{\fontsize{8.5}{10.5}\selectfont\color{issngold}\textbf{ISSN: 2422-1783}}%
-    \makebox[0.5\textwidth][c]{\fontsize{8.5}{10.5}\selectfont\color{issngold}\textbf{ISSN: 2389-864X (En línea)}}%
-    \par\vspace{2.5pt}%
-    {\fontsize{8.5}{10.5}\selectfont Revista Ingenio, Vol. \@volumen. Mes \@periodo\par}%
+    \hspace{1.85cm}%
+    \begin{minipage}[t]{5.0cm}
+      \raggedright
+      \IfFileExists{assets/brand/image2_cropped.png}{%
+        \includegraphics[height=1.80cm, keepaspectratio]{assets/brand/image2_cropped.png}%
+      }{%
+        \IfFileExists{assets/brand/image2.jpg}{%
+          \includegraphics[height=1.80cm, keepaspectratio]{assets/brand/image2.jpg}%
+        }{%
+          \textbf{Revista Ingenio}%
+        }%
+      }\par
+      \vspace{4pt}
+      \raggedright
+      {\fontsize{9.5}{11.5}\selectfont\color{issngold}\textbf{ISSN: 2389-864X (En línea)}\par}
+    \end{minipage}%
+    \par\vspace{3pt}\hspace{35pt}%
+    {\fontsize{9.5}{11.5}\selectfont Revista Ingenio, Vol. \@volumen. Mes \@periodo\par}%
   \end{minipage}%
 }
 
@@ -155,7 +168,7 @@
 
 % --- Formato de Tablas y Figuras (Times New Roman 10 pt) ---
 \captionsetup[table]{
-    font={small},
+    font={footnotesize},
     labelfont={bf},
     labelsep=period,
     justification=raggedright,
@@ -164,52 +177,55 @@
 }
 
 \captionsetup[figure]{
-    font={small},
+    font={footnotesize},
     labelfont={bf},
     labelsep=period,
     justification=centering,
     skip=6pt
 }
 
-% Macro para la fuente según IEEE
+% Macro para la fuente según plantilla de Revista Ingenio UFPS
 \newcommand{\fuente}[1]{%
-  \vspace{2pt}%
-  \begin{flushleft}%
-    \fontsize{9}{11}\selectfont \textit{Fuente:} #1%
-  \end{flushleft}%
+  \par\vspace{2pt}%
+  {\raggedright\fontsize{9}{11}\selectfont Fuente: #1\par}%
 }
 
 % --- Encabezado Inicial del Manuscrito ---
 \newcommand{\makeingenioheader}{%
   \twocolumn[%
-    \vspace*{-0.4cm}
-    % Título en español: 16 pt negrita, solo mayúscula inicial
-    {\fontsize{16}{19}\selectfont\bfseries\raggedright \@title \par}
+    \vspace*{-0.1cm}
+    % Título en español: 15 pt negrita, centrado
+    {\fontsize{14.5}{17.5}\selectfont\bfseries\centering \@title \par}
+    \vspace{4pt}
+    % Línea divisoria gruesa tipo negrilla
+    \noindent{\rule{\textwidth}{1.5pt}}\par
     \vspace{6pt}
-    % Título en inglés: 12 pt normal
-    {\fontsize{12}{14}\selectfont\raggedright \@tituloingles \par}
+    % Título en inglés: 12 pt normal, centrado
+    {\fontsize{11.5}{13.5}\selectfont\centering \@tituloingles \par}
     \vspace{10pt}
-    % Autores
-    {\fontsize{11}{13}\selectfont\raggedright \@autores \par}
-    \vspace{6pt}
-    % Filiación institucional y ORCID
-    {\fontsize{9}{11}\selectfont\raggedright \@filiacion \par}
-    \vspace{6pt}
-    % Fechas
-    {\fontsize{9}{11}\selectfont\raggedright 
-      \textbf{Fecha de recibido:} \@fecharecibido \quad 
-      \textbf{Fecha aprobación:} \@fechaaprobado \par}
+    % Autores y títulos centrados
+    {\fontsize{10}{12}\selectfont\centering \@autores \par}
     \vspace{12pt}
+    % Filiación institucional y ORCID con sangría izquierda
+    {\fontsize{8.5}{10.5}\selectfont\raggedright \leftskip=1.0cm \@filiacion \par}
+    \vspace{10pt}
+    % Fechas (en dos líneas separadas, alineadas a la derecha, sin negrita)
+    {\fontsize{8.5}{10.5}\selectfont\raggedleft 
+      Fecha de recibido: \@fecharecibido \par
+      \vspace{1pt}
+      Fecha aprobación: \@fechaaprobado \par
+    }
+    \vspace{8pt}
     % Resumen y Palabras clave (10 pt justificado)
-    {\fontsize{10}{12}\selectfont
+    {\fontsize{9.5}{11.5}\selectfont
       \noindent\textbf{Resumen:} \@resumen \par
-      \vspace{4pt}
+      \vspace{3pt}
       \noindent\textbf{Palabras claves:} \@palabrasclave \par
-      \vspace{8pt}
+      \vspace{6pt}
       \noindent\textbf{Abstract:} \@abstracttext \par
-      \vspace{4pt}
+      \vspace{3pt}
       \noindent\textbf{Keywords:} \@keywords \par
     }
-    \vspace{14pt}
+    \vspace{8pt}
   ]
 }
