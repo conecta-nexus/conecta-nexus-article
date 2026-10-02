@@ -1,162 +1,209 @@
 \documentclass[12pt,twocolumn]{article}
 \usepackage{cls/ingenio_ufps}
 
-% =========================================================================
-% METADATOS EDITORIALES DE LA REVISTA INGENIO
-% =========================================================================
-\volumen{21}
-\periodo{Enero - Junio}
+% Los datos de volumen y aceptación corresponden a la asignación editorial.
+\volumen{}
+\periodo{}
 \fecharecibido{}
 \fechaaprobado{}
+\fancyhead[C]{\small\textit{Manuscrito de revisión -- Revista Ingenio}}
+\fancyfoot[C]{\thepage}
+\geometry{headheight=0.6cm,headsep=0.5cm,footskip=0.8cm}
+\setlength{\emergencystretch}{3em}
+\raggedbottom
 
-% Título: máximo 150 caracteres, formato oración (solo inicial mayúscula), sin fechas ni ciudades
 \title{Intermediación digital universidad-empresa para proyectos académicos: revisión bibliométrica y conceptual}
 \tituloingles{Digital university-industry intermediation for academic projects: A bibliometric and conceptual review}
-
-\autores{
-    José Manuel Pérez Rodríguez$^{1}$,
-    Juan Diego Sarmiento Barroyeta$^{2}$,
-    Nelson Enrique Conde Tarazona$^{3}$
-}
-
+\autores{José Manuel Pérez Rodríguez$^{1}$, Juan Diego Sarmiento Barroyeta$^{2}$, Nelson Enrique Conde Tarazona$^{3}$}
 \filiacion{
-    $^{1}$Programa de Ingeniería de Sistemas, Universidad Francisco de Paula Santander, Colombia, Código: 1152375\\
-    $^{2}$Programa de Ingeniería de Sistemas, Universidad Francisco de Paula Santander, Colombia, Código: 1152376\\
-    $^{3}$Programa de Ingeniería de Sistemas, Universidad Francisco de Paula Santander, Colombia, Código: 1152391
+$^{1}$Programa de Ingeniería de Sistemas, Universidad Francisco de Paula Santander, Colombia, Código: 1152375\\
+$^{2}$Programa de Ingeniería de Sistemas, Universidad Francisco de Paula Santander, Colombia, Código: 1152376\\
+$^{3}$Programa de Ingeniería de Sistemas, Universidad Francisco de Paula Santander, Colombia, Código: 1152391
 }
+\resumen{La intermediación digital puede ampliar los medios de encuentro entre universidades y empresas, pero su contribución depende de las capacidades y reglas que sostienen la colaboración. Este artículo examina sus funciones, condiciones y límites para proyectos académicos mediante una revisión exploratoria con análisis bibliométrico y síntesis conceptual. Se reprocesaron seis exportaciones bibliográficas con 600 representaciones de registros, equivalentes a 200 publicaciones únicas de 2019--2026. La síntesis examinó 49 publicaciones de una selección temática preexistente y un referente metodológico adicional, principalmente mediante resúmenes, complementados con textos completos disponibles. Se recalcularon distribuciones y frecuencias y se examinaron tres mapas de coocurrencia. La innovación abierta fue el término más frecuente, presente en 57 publicaciones. La comparación distingue funciones de traducción de necesidades, coordinación, desarrollo de capacidades y evaluación, cuyo alcance varía entre investigación, comercialización y enseñanza. Para proyectos académicos, la evidencia respalda considerar la mediación humana, la pertinencia formativa y la diferenciación de resultados. Las implicaciones constituyen orientaciones conceptuales, sujetas a validación contextual. La selección no probabilística, la documentación incompleta de las búsquedas y el acceso desigual a los textos limitan la exhaustividad y la generalización.}
+\palabrasclave{Colaboración universidad-empresa, innovación abierta, intermediación digital, proyectos académicos, transferencia de conocimiento.}
+\abstracttext{Digital intermediation can expand opportunities for universities and firms to connect, but its contribution depends on the capabilities and rules supporting collaboration. This article examines its functions, conditions, and limitations for academic projects through an exploratory review combining bibliometric analysis and conceptual synthesis. Six bibliographic exports containing 600 record representations were reprocessed, yielding 200 unique publications from 2019--2026. The synthesis examined 49 publications from a pre-existing thematic selection and one additional methodological reference, primarily through abstracts, supplemented by available full texts. Distributions and frequencies were recalculated, and three co-occurrence maps were examined. Open innovation was the most frequent term, appearing in 57 publications. The comparison distinguishes needs translation, coordination, capability development, and evaluation functions, whose scope varies across research, commercialization, and teaching. For academic projects, the evidence supports considering human mediation, educational relevance, and differentiated outcomes. These implications constitute conceptual orientations requiring contextual validation. Non-probabilistic selection, incomplete search documentation, and unequal full-text access limit comprehensiveness and generalizability.}
+\keywords{Academic projects, digital intermediation, knowledge transfer, open innovation, university-industry collaboration.}
 
-\resumen{
-    La articulación universidad-empresa requiere mecanismos que traduzcan necesidades, reduzcan asimetrías de información y conserven la trazabilidad de la colaboración. El objetivo de este artículo es caracterizar la intermediación digital, la innovación abierta y la transferencia de conocimiento para fundamentar . La evidencia de búsqueda reporta más de 1.428 registros identificados en ScienceDirect, Google Scholar e IEEE Xplore. Para el análisis reproducible se depuraron los archivos bibliográficos conservados en el repositorio: 600 registros brutos, almacenados en tres formatos, produjeron 200 publicaciones únicas de 2019--2026. Se realizó análisis descriptivo, coocurrencia de palabras clave en VOSviewer y síntesis conceptual de 50 publicaciones pertinentes del corpus; además, se incorporaron dos referentes metodológicos y contextuales de Revista Ingenio. Los mapas muestran un núcleo constituido por innovación abierta, transferencia de conocimiento, transferencia tecnológica, colaboración universidad-empresa y transformación digital. La síntesis identifica cuatro dimensiones para una plataforma de intermediación: estructuración de oportunidades, gestión de actores y reglas, soporte a la interacción y trazabilidad de resultados.
-}
-
-\palabrasclave{Colaboración universidad-empresa, innovación abierta, intermediación digital, revisión bibliométrica, transferencia de conocimiento.}
-
-\abstracttext{
-    University-industry collaboration requires mechanisms that translate needs, reduce information asymmetries, and preserve collaboration traceability. This article aims to characterize digital intermediation, open innovation, and knowledge transfer to provide the foundation. The search evidence reports more than 1,428 records identified in ScienceDirect, Google Scholar, and IEEE Xplore. For the reproducible analysis, the bibliographic files retained in the repository were processed: 600 raw records, stored in three formats, yielded 200 unique publications from 2019--2026. Descriptive analysis, keyword co-occurrence mapping in VOSviewer, and a conceptual synthesis of 50 relevant publications from the corpus were conducted; two methodological and contextual studies from Revista Ingenio were also incorporated. The maps reveal a core structured around open innovation, knowledge transfer, technology transfer, university-industry collaboration, and digital transformation. The synthesis identifies four dimensions for an intermediation platform: structuring opportunities, managing actors and rules, supporting interaction, and tracing outcomes. These findings support the conceptual scope without claiming that the prototype has been implemented or evaluated.
-}
-
-\keywords{Bibliometric review, digital intermediation, knowledge transfer, open innovation, university-industry collaboration.}
-
-% =========================================================================
-% INICIO DEL DOCUMENTO
-% =========================================================================
 \begin{document}
-
 \makeingenioheader
 
 \section{Introducción}
-La colaboración universidad-empresa integra capacidades académicas con necesidades del entorno mediante actividades educativas, investigación, transferencia y emprendimiento. Su desarrollo depende de la disposición de los actores, el respaldo institucional, los recursos y la alineación de objetivos. Estudios recientes documentan barreras de confianza, comunicación, capacidad y gobernanza, así como beneficios relacionados con la formación y el desarrollo de capital humano \cite{malik2021,jonbekova2025,tereshchenko2024,liuhumanresources2025}.
+La colaboración universidad-empresa comprende actividades con objetivos y resultados distintos. Una alianza para investigar un problema científico, un acuerdo para comercializar una tecnología y un proyecto integrado en un curso requieren formas diferentes de coordinación. Esta diversidad importa al examinar la intermediación digital: facilitar el contacto no equivale a resolver las condiciones que permiten trabajar conjuntamente. La revisión de alcance de Murga Pinillos, basada en 93 artículos, identifica factores organizacionales, actitudes de los participantes, infraestructura y condiciones externas, junto con prácticas de gestión, incentivos, relaciones y enseñanza \cite{murga2024}.
 
-Los intermediarios facilitan el encuentro entre participantes que operan con lenguajes, tiempos e incentivos distintos. La literatura les atribuye funciones de traducción de conocimiento, reducción de asimetrías de información, construcción de confianza, coordinación y gestión de riesgos. Estas funciones pueden desarrollarse mediante unidades tradicionales, redes virtuales, plataformas digitales u organizaciones especializadas \cite{albats2022,sun2025,soares2026,santos2026,caloffi2023}.
+La literatura sobre innovación abierta ofrece un marco para estudiar estos intercambios, aunque sus resultados no constituyen una explicación uniforme. Gustina et al., mediante el análisis de 71 artículos, muestran la diversidad de formas, procesos y variables empleadas en el estudio de la apertura universitaria \cite{gustina2024}. Por ello, reconocer la presencia de colaboración o tecnología resulta insuficiente para explicar qué conocimiento circula, quién lo utiliza y bajo qué condiciones produce valor.
 
-La innovación abierta proporciona el marco para comprender el intercambio de conocimiento más allá de los límites de una organización. En la relación universidad-empresa, sus resultados dependen de prácticas educativas, relacionales, organizacionales y de transferencia, no únicamente de la disponibilidad de tecnología \cite{murga2024,bejarano2023,osorno2022,gustina2024,delasheras2021}. En las colaboraciones orientadas a la enseñanza, los proyectos reales pueden acercar la formación a problemas del entorno, siempre que exista acompañamiento académico y una delimitación clara de responsabilidades \cite{borah2021,akimov2023,bragelien2026,oladimeji2022}.
+Los intermediarios intervienen en esa articulación. Albats et al. comparan estructuras y servicios de veinte intermediarios internacionales y muestran que sus diferencias organizativas exceden el medio físico o digital utilizado \cite{albats2022}. Sun et al., en una revisión de 69 trabajos, distinguen las alianzas de investigación de la comercialización y relacionan las actividades intermediarias con las etapas de desarrollo de la asociación \cite{sun2025}. Estas contribuciones permiten examinar la intermediación como un proceso, en lugar de reducirla a un catálogo de contactos.
 
+La enseñanza requiere una consideración específica. Borah et al. estudian colaboraciones orientadas a la formación en instituciones de educación superior de India y encuentran una relación favorable con competencias de empleabilidad, especialmente las específicas del dominio \cite{borah2021}. El resultado justifica estudiar esta modalidad por sus objetivos educativos, sin asumir que los indicadores de patentes, licencias o empresas derivadas permiten evaluarla adecuadamente.
+
+El objetivo de este artículo es analizar las funciones y condiciones de la intermediación digital universidad-empresa y delimitar sus implicaciones para proyectos académicos. La pregunta que orienta la revisión es: ¿qué mecanismos de intermediación describe la literatura disponible y qué precauciones exige su aplicación a colaboraciones formativas? Se combina la descripción de un corpus bibliográfico con una síntesis comparativa que diferencia evidencia empírica, propuestas conceptuales e implicaciones interpretativas.
 
 \section{Metodología}
-Se desarrolló una revisión bibliométrica y conceptual. La evidencia de búsqueda informa más de 1.428 registros identificados: 646 resultados en ScienceDirect, aproximadamente 748 en Google Scholar y cuatro trabajos en IEEE Xplore, además de exploración semántica y multibase. Este total representa el universo de descubrimiento informado por el equipo.
+\subsection{Diseño y procedencia del corpus}
+Se realizó una revisión exploratoria con análisis bibliométrico descriptivo y síntesis conceptual. El material documental corresponde a la versión \texttt{7be5f09} del repositorio público del estudio\footnote{\url{https://github.com/conecta-nexus/conecta-nexus-article/tree/7be5f0950e3124c693c4af3d54e9f9835bd8c364}.}, examinada el 30 de septiembre de 2026. El repositorio conserva seis exportaciones identificadas como procedentes de ScienceDirect: dos conjuntos de cien registros, cada uno representado en RIS, BibTeX y texto. También contiene un archivo RIS unificado, el programa de depuración y tres imágenes de VOSviewer.
 
-Para garantizar que el análisis pudiera verificarse, se utilizó el conjunto efectivamente disponible en el repositorio LaTeX. Los seis archivos fuente corresponden a dos conjuntos bibliográficos almacenados en RIS, BibTeX y texto. En total contienen 600 registros brutos, cuya repetición entre formatos fue eliminada mediante DOI y, subsidiariamente, título normalizado. El resultado fue un corpus reproducible de 200 publicaciones únicas: 196 artículos y cuatro capítulos de libro, todos con DOI.
+Los archivos no conservan las ecuaciones originales, las fechas verificadas de consulta, los campos de búsqueda ni un registro completo de exclusiones. Por tanto, el punto de partida reproducible es el conjunto exportado. No se atribuye a estos materiales cobertura exhaustiva de las bases mencionadas en versiones anteriores del estudio, ni se presenta el procedimiento como una revisión sistemática o un flujo PRISMA completo.
 
-El análisis descriptivo contabilizó años, tipos documentales y palabras clave. Para la síntesis conceptual se seleccionaron 50 publicaciones del corpus que cumplían tres condiciones: publicación entre 2021 y 2026, disponibilidad de DOI y relación explícita en título, resumen o palabras clave con colaboración universidad-empresa, innovación abierta, intermediación, transferencia de conocimiento, servicios digitales o proyectos académicos. Se añadieron dos artículos de Revista Ingenio por su aporte al análisis de estructuras conceptuales y a la transformación digital \cite{romeroriano2022,vergel2023}. En total, el artículo cita 52 referencias recientes.
+\subsection{Depuración y comprobación de registros}
+Se inspeccionó y ejecutó el programa de unificación sobre una copia de los seis archivos. La identificación de duplicados utiliza el DOI normalizado y, cuando este falta, el título normalizado. Los 600 registros procesados produjeron 200 DOI únicos; las 400 representaciones restantes corresponden a repeticiones entre formatos. El archivo generado coincidió byte por byte con el RIS unificado conservado. Los 200 registros tienen DOI; 199 incluyen resumen y 196 contienen palabras clave. Las etiquetas documentales del RIS clasifican 196 registros como artículos y cuatro como capítulos, sin que esa clasificación implique diseños de investigación homogéneos.
 
-\subsection{Ecuaciones de Búsqueda y Selección}
-Las evidencias describen búsquedas en ScienceDirect, Google Scholar, Publish or Perish e IEEE Xplore, además de una exploración multibase. Se documentan el uso de frases exactas, operadores booleanos, delimitación temática y el periodo 2019--2026.
+Para describir el corpus se conservaron los años registrados en las exportaciones. Las frecuencias de palabras clave se calcularon por documento, sin distinguir mayúsculas y minúsculas y contando una sola vez cada término dentro de una publicación. Se mantuvieron separadas las variantes de guiones y singular/plural para hacer visible su efecto. Esta decisión permite auditar los datos existentes, pero no sustituye la normalización terminológica que requeriría un nuevo análisis de redes.
 
-La selección se realizó sobre los registros disponibles después de la deduplicación. Se priorizaron trabajos que permitieran explicar actores, mecanismos, barreras, resultados y capacidades digitales. Las revisiones bibliométricas y los análisis de acoplamiento bibliográfico incluidos en el corpus sirvieron como contraste metodológico para interpretar el campo \cite{figueiredo2025,liao2024,leitao2023}.
+\subsection{Selección y extracción conceptual}
+Se examinó una selección temática preexistente de 50 publicaciones del corpus y dos referencias externas. Su pertenencia al conjunto se comprobó mediante DOI. Se conservaron 49 publicaciones para la síntesis temática; se descartó un capítulo panorámico por su aportación redundante respecto de estudios más específicos. Entre las referencias externas, se mantuvo el trabajo de Romero-Riaño et al. por su análisis de las diferencias entre estructuras conceptuales obtenidas desde resúmenes y palabras clave \cite{romeroriano2022}. El estudio restante, centrado en gobierno de tecnologías de información en entidades estatales, no se utilizó por su relación indirecta con la pregunta de revisión.
 
-\subsubsection{Criterios de inclusión}
-Se incluyeron artículos y capítulos con DOI, publicados entre 2021 y 2026 y vinculados de manera directa con al menos uno de los ejes de la revisión. Se excluyeron duplicados entre formatos, registros anteriores al intervalo editorial de cinco años y publicaciones cuyo objeto principal no aportaba a la intermediación universidad-empresa. No se incorporaron títulos inexistentes en las fuentes ni se transformaron resultados esperados del anteproyecto en resultados obtenidos.
+La extracción registró objetivo, método, contexto, hallazgo pertinente, limitación y función argumentativa. Se consultaron los metadatos editoriales depositados en Crossref y se contrastaron fuentes editoriales o institucionales accesibles. La síntesis se apoyó principalmente en los resúmenes conservados, complementados con la consulta de textos completos disponibles. Cuando solo se dispuso del resumen, las afirmaciones se restringieron a su contenido explícito. No se efectuó una evaluación formal y homogénea del riesgo de sesgo de todos los estudios.
 
-\subsubsection{Tratamiento bibliométrico}
-La red de coocurrencia se generó en VOSviewer con todas las palabras clave y conteo completo. Se produjeron vistas con mínimos de cinco y tres apariciones; con el segundo umbral también se obtuvo una visualización superpuesta por año promedio de publicación. El tamaño del nodo representa frecuencia; la proximidad y los enlaces indican coocurrencia; y el color diferencia agrupaciones o temporalidad. El uso de redes y tesauros para examinar estructuras conceptuales tiene un antecedente directo en Revista Ingenio \cite{romeroriano2022}.
+Se compararon funciones, condiciones de operación y resultados, diferenciando enseñanza, investigación y comercialización. El acoplamiento bibliográfico de Figueiredo et al. ofrece un contraste sobre motivaciones, canales, retos y contextos de transferencia \cite{figueiredo2025}; sus agrupaciones no se trasladaron a las redes de coocurrencia del presente corpus, pues corresponden a otra técnica y otra selección documental.
 
-Las variantes ortográficas presentes en los metadatos se conservaron para no alterar el resultado generado. En consecuencia, \textit{university-industry collaboration} y \textit{university--industry collaboration} aparecen como términos diferentes. Este criterio debe considerarse al interpretar sus frecuencias.
+\subsection{Alcance del análisis gráfico}
+La documentación de las imágenes declara análisis de todas las palabras clave, conteo completo y umbrales de tres y cinco apariciones. Se revisaron las imágenes y su correspondencia general con los términos del RIS. No se conservaron archivos de red, tesauro ni parámetros completos de normalización y agrupamiento, por lo que no fue posible reproducir exactamente las posiciones y los grupos. La interpretación se limita a relaciones temáticas visibles y frecuencias recalculadas; no se estimaron medidas de centralidad ni relaciones causales.
 
 \section{Resultados y discusión}
-El corpus reproducible reunió 200 publicaciones entre 2019 y 2026. La distribución fue de 11 registros en 2019, 17 en 2020, 22 en 2021, 26 en 2022, 19 en 2023, 22 en 2024, 31 en 2025 y 52 en 2026. El incremento final describe el conjunto exportado y no demuestra por sí mismo el crecimiento total del campo, debido a que no se conservaron todas las estrategias originales de recuperación.
-
-Las palabras clave más frecuentes fueron \textit{open innovation} (57), \textit{knowledge transfer} (19), \textit{technology transfer} (15), \textit{innovation} (15), \textit{university-industry collaboration} (14), \textit{digital transformation} (11), \textit{university--industry collaboration} (11), \textit{innovation ecosystem} (9), \textit{systematic literature review} (9) e \textit{innovation intermediaries} (8). La centralidad de la innovación abierta coincide con trabajos que la explican mediante mecanismos de colaboración, cocreación y generación simultánea de valor social y empresarial \cite{pertenbreiter2026,desilva2021,salavilar2024}.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\columnwidth]{vosviewer/co_ocurrence_5min.png}
-\caption{Red central de coocurrencia de palabras clave con un mínimo de cinco apariciones.}
-\label{fig:coocurrencia5}
-\fuente{Elaboración propia en VOSviewer a partir del corpus unificado.}
-\end{figure}
-
-La Figura~\ref{fig:coocurrencia5} muestra el núcleo temático. La innovación abierta conecta transferencia, colaboración, ecosistemas e intermediarios. La literatura señala que la sola existencia del intermediario no garantiza el inicio de una colaboración: su operación depende de proximidad, adaptación del modelo organizacional, sostenibilidad y capacidad para conectar conocimiento especializado \cite{schneider2024,delorme2023,rossi2022,vermicelli2025}.
-
-\begin{figure*}[t]
-\centering
-\includegraphics[width=0.94\textwidth]{vosviewer/co_ocurrence_3_min.png}
-\caption{Red ampliada de coocurrencia de palabras clave con un mínimo de tres apariciones.}
-\label{fig:coocurrencia3}
-\fuente{Elaboración propia en VOSviewer a partir del corpus unificado.}
-\end{figure*}
-
-La reducción del umbral a tres apariciones, presentada en la Figura~\ref{fig:coocurrencia3}, hace visibles transferencia tecnológica, capacidades organizacionales, pequeñas y medianas empresas, plataformas digitales, inteligencia artificial y sostenibilidad. Esta diversidad confirma que la transferencia no consiste únicamente en entregar resultados: requiere servicios institucionales, capacidades de absorción, comunidades de innovación y mecanismos que conecten conocimiento tácito y explícito \cite{ystrom2025,compagnucci2024,temel2021,wang2021,yin2023}.
-
-\begin{figure*}[t]
-\centering
-\includegraphics[width=0.94\textwidth]{vosviewer/co_ocurrence_overlay_3_min.png}
-\caption{Visualización temporal superpuesta de palabras clave con un mínimo de tres apariciones.}
-\label{fig:overlay}
-\fuente{Elaboración propia en VOSviewer a partir del corpus unificado.}
-\end{figure*}
-
-La Figura~\ref{fig:overlay} diferencia los términos según su año promedio. Los tonos más recientes se desplazan hacia digitalización, capacidades, inteligencia artificial y ecosistemas. Los estudios revisados asocian esta evolución con plataformas, prácticas de conocimiento y nuevos servicios de innovación \cite{barile2026,hafeez2025,secundo2026,kriz2026}. En el contexto de Revista Ingenio, la transformación digital también se entiende como una combinación de procedimientos, servicios y capacidades institucionales, y no como una sustitución aislada de herramientas \cite{vergel2023}.
-
-La colaboración digital mantiene tensiones entre flexibilidad y control. Los contratos formales, la gobernanza relacional, la propiedad intelectual, la regulación de portafolios y la sostenibilidad de las comunidades deben abordarse de manera complementaria \cite{lee2024,yang2025,gomes2023,liusymbiosis2025,selinacao2026}. Por tanto, una plataforma institucional debe registrar reglas y decisiones sin asumir que la automatización resuelve conflictos de incentivos o confianza.
-
-\subsection{Comparativa de Plataformas Existentes}
-La revisión permitió sustituir la comparación basada únicamente en sitios web por una tipología sustentada en publicaciones científicas. La Tabla~\ref{tab:comparativa} resume cuatro formas de intermediación y su implicación. Las categorías no son excluyentes: una misma iniciativa puede combinar estructura institucional, red virtual, servicios digitales y acompañamiento docente \cite{albats2022,sun2025,borah2021,salavilar2024}.
+\subsection{Composición y estructura temática}
+El corpus comprende publicaciones registradas entre 2019 y 2026. La Tabla~\ref{tab:corpus} presenta su distribución. Los 52 registros de 2026 representan el 26\% del conjunto; este porcentaje describe la exportación y no una tasa de crecimiento del campo. Además, 2026 es un año incompleto en la fecha de revisión y los metadatos pueden combinar fechas de publicación anticipada y definitiva.
 
 \begin{table}[t]
 \centering
-\caption{Tipos de intermediación relevantes.}
-\label{tab:comparativa}
-\fontsize{8.5}{10.5}\selectfont
-\begin{tabularx}{\columnwidth}{@{}lXX@{}}
+\caption{Distribución anual del corpus exportado.}
+\label{tab:corpus}
+\begin{tabular}{@{}rrrr@{}}
 \toprule
-\textbf{Tipo} & \textbf{Función principal} & \textbf{Implicación} \\
+Año & Registros & Año & Registros\\
 \midrule
-Tradicional & Unidades formales de transferencia y coordinación & Revisión institucional, gobernanza y responsabilidades \\
-Virtual & Redes que conectan actores entre organizaciones & Comunicación y continuidad de la relación \\
-Digital & Plataformas, datos y catálogos de servicios & Perfiles, búsqueda, solicitudes y trazabilidad \\
-Educativa & Proyectos reales integrados con enseñanza & Acompañamiento docente y pertinencia académica \\
+2019 & 11 & 2023 & 19\\
+2020 & 17 & 2024 & 22\\
+2021 & 22 & 2025 & 31\\
+2022 & 26 & 2026 & 52\\
 \bottomrule
-\end{tabularx}
-\fuente{Elaboración propia a partir de \cite{albats2022,sun2025,borah2021,salavilar2024}.}
+\end{tabular}
+\fuente{Recuento por DOI único y año registrado en el RIS. Total: 200 publicaciones.}
 \end{table}
 
-Los estudios sobre transferencia y comercialización muestran que el tránsito desde una necesidad hasta un resultado exige capacidades organizacionales, configuración de actores, apoyo institucional y reglas de apropiación \cite{li2026,tolin2025,martinez2023,romerosanchez2024,kang2025}. esto implica que la oportunidad debe describirse en términos comprensibles, ser revisada académicamente y mantener una relación verificable con los participantes y el resultado.
+La innovación abierta aparece en 57 publicaciones, seguida por transferencia de conocimiento (19), transferencia tecnológica (15) e innovación (15). La colaboración universidad-empresa figura en dos variantes tipográficas con 13 y 11 documentos, respectivamente; transformación digital aparece en 11. Un registro repite internamente la primera variante, lo que explica que el conteo literal de etiquetas arroje 14 en lugar de 13 documentos. Esta diferencia ilustra cómo la limpieza de los metadatos afecta la lectura bibliométrica.
 
-\subsection{Modelado del Emparejamiento Académico}
-El corpus no proporciona una fórmula universal de emparejamiento y el anteproyecto tampoco define una. Las experiencias de \textit{matchmaking} educativo muestran que el encuentro entre estudiantes y organizaciones debe evaluarse dentro del curso y de sus objetivos formativos \cite{bragelien2026}. En consecuencia, debe tratar la correspondencia como un proceso mediado: búsqueda y filtrado, manifestación de interés, revisión de la organización y autorización académica.
+La Figura~\ref{fig:coocurrencia5} presenta la red con umbral de cinco apariciones. Su distribución visual sitúa la innovación abierta entre términos de transferencia, colaboración e intermediación. La revisión bibliométrica de de las Heras-Rosas y Herrera también relaciona la producción sobre universidad e innovación abierta con transferencia, redes y cooperación \cite{delasheras2021}. La coincidencia temática constituye un contraste cualitativo, no una validación estadística entre corpus.
 
-La plataforma deberá distinguir interés, aceptación mutua y vinculación formal. Esta separación evita que una puntuación automática sustituya el juicio docente y reconoce que los proyectos educativos persiguen resultados diferentes de la comercialización. La estructura de actores también debe considerar la evolución de los modelos de colaboración, los ecosistemas universitarios y la participación de universidad, empresa, gobierno y sociedad \cite{johnson2026,liumodels2026,shin2023}.
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{vosviewer/co_ocurrence_5min.png}
+\caption{Red de coocurrencia conservada con umbral declarado de cinco apariciones.}
+\label{fig:coocurrencia5}
+\fuente{Visualización en VOSviewer conservada con el corpus. Algunas etiquetas están ocultas o abreviadas en la exportación original.}
+\end{figure*}
 
-\subsection{Arquitectura Modular y Evidencia Gráfica}
-Las tres redes constituyen la evidencia gráfica de la revisión y muestran que la dimensión tecnológica se conecta con conocimiento, gobernanza, enseñanza e interacción. Por ello, la arquitectura no debe definirse solo desde componentes de software. El modelo funcional debe representar necesidades, perfiles, solicitudes, vinculaciones, estados, resultados y valoraciones, junto con reglas de visibilidad y responsabilidad.
+Con el umbral de tres apariciones, la Figura~\ref{fig:coocurrencia3} permite observar términos de gestión del conocimiento, capital social, intermediarios, modelos de negocio y digitalización. Liao et al. estudian la transformación digital desde ecosistemas de innovación y negocio \cite{liao2024}; Leitão et al. proponen una taxonomía de universidades cívicas híbridas articulada alrededor de innovación abierta, gobernanza y sostenibilidad \cite{leitao2023}. Ambos trabajos ayudan a interpretar la amplitud conceptual del conjunto, aunque sus objetos de análisis exceden los proyectos académicos.
 
-La síntesis identifica cuatro dimensiones. La primera es la estructuración de oportunidades, que convierte una necesidad empresarial en información comprensible y revisable. La segunda es la gestión de actores y reglas, que diferencia responsabilidades y autorizaciones. La tercera es el soporte a la interacción, mediante búsqueda, solicitudes y comunicación controlada. La cuarta es la trazabilidad, que conserva la relación entre necesidad, participantes, estados y resultados.
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{vosviewer/co_ocurrence_3_min.png}
+\caption{Red ampliada de coocurrencia conservada con umbral declarado de tres apariciones.}
+\label{fig:coocurrencia3}
+\fuente{Visualización en VOSviewer conservada con el corpus. Los colores representan agrupaciones del mapa original.}
+\end{figure*}
 
-Los antecedentes demuestran que una herramienta distribuida puede apoyar equipos universidad-empresa \cite{oladimeji2022}; sin embargo, la literatura también advierte que los servicios digitales dependen de recursos, alianzas, capacidades y modelos institucionales \cite{salavilar2024,figueiredo2025}.  se plantea, por tanto, como apoyo a la articulación y no como sustituto de la gestión académica, jurídica o contractual. Su arquitectura, implementación y desempeño deberán verificarse en fases posteriores.
+La Figura~\ref{fig:overlay} muestra una escala de año promedio cuyas marcas visibles van de 2022 a 2025. El recálculo por documento arroja aproximadamente 2023,12 para \textit{open innovation}, 2023,33 para \textit{digitalization} y 2024,29 para \textit{artificial intelligence}. Estos promedios describen la composición temporal de las publicaciones asociadas; no establecen fechas de aparición de conceptos ni demuestran una frontera de investigación. Barile y Secundo, mediante una revisión más amplia, examinan distintas configuraciones de ecosistemas habilitados por tecnologías digitales \cite{barile2026}. Esa diversidad aconseja evitar que la presencia visual de un término se convierta en una recomendación tecnológica automática.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{vosviewer/co_ocurrence_overlay_3_min.png}
+\caption{Visualización temporal superpuesta conservada con umbral declarado de tres apariciones.}
+\label{fig:overlay}
+\fuente{Visualización en VOSviewer conservada con el corpus. El gradiente representa el año promedio, según su documentación.}
+\end{figure*}
+
+\subsection{Intermediación: funciones y condiciones de actuación}
+Albats et al. identifican cuatro configuraciones mediante análisis de correspondencias múltiples y agrupamiento: \textit{rigid}, \textit{rigid-unbounded}, \textit{agent-bounded} y \textit{agile}. Su aporte es vincular estructura institucional y capacidad de actuación, evitando equiparar un canal digital con una forma organizativa única \cite{albats2022}. Caloffi et al., mediante minería de texto y bibliometría, distinguen siete corrientes de literatura, seis asociadas con tipos específicos de intermediarios \cite{caloffi2023}. La comparación muestra que las tipologías responden a preguntas y unidades de análisis distintas.
+
+Para las asociaciones de investigación, Sun et al. relacionan las funciones intermediarias con las etapas de la colaboración y distinguen consecuencias para la asociación y para sus participantes \cite{sun2025}. Soares et al. destacan traducción cognitiva, reducción de asimetrías, construcción de confianza, alineación temporal y gestión de riesgos, condicionadas por capacidades de absorción, financiación e instituciones \cite{soares2026}. Estas síntesis sugieren evaluar qué obstáculo atiende el intermediario y en qué momento, antes de atribuirle beneficios generales.
+
+La evidencia sobre fracasos matiza esa expectativa. Schneider examina el inicio de la transferencia en movilidad inteligente mediante un taller y entrevistas; identifica problemas de comprensión de la investigación, iniciativa y reconocimiento de responsabilidades que afectan a los propios intermediarios \cite{schneider2024}. La existencia de una unidad o plataforma, por tanto, puede coexistir con oportunidades que nunca llegan a convertirse en colaboración.
+
+Delorme et al., a partir de un caso longitudinal en una universidad francesa, muestran que la proximidad se construye mediante decisiones del modelo de negocio \cite{delorme2023}. Vermicelli et al. analizan un caso de intermediación entre problemas industriales y capacidades matemáticas \cite{vermicelli2025}. Ambos aportes destacan la traducción y el conocimiento especializado; su alcance es contextual y no demuestra la superioridad de un mecanismo universal de emparejamiento.
+
+\subsection{Gobernanza, confianza y continuidad}
+Las barreras de coordinación aparecen en contextos institucionales diferentes. Malik et al. combinan una encuesta a 24 universidades, 25 entrevistas y un taller en Pakistán, e identifican dificultades de coordinación entre gobierno, universidades y empresas \cite{malik2021}. Jonbekova et al. describen en Kazajistán avances formativos junto con restricciones de recursos, confianza y autonomía \cite{jonbekova2025}. La convergencia señala una dificultad recurrente, pero sus respuestas dependen del papel del Estado y de la organización universitaria de cada contexto.
+
+Lee y Miozzo muestran mediante análisis configuracional que la combinación de contratos y gobernanza relacional varía según el propósito de la colaboración: las configuraciones asociadas a investigación incierta difieren de las vinculadas a creación de empresas derivadas \cite{lee2024}. Esto impide sostener que la confianza siempre sustituye al contrato o que formalizar acuerdos garantiza por sí solo el intercambio.
+
+En laboratorios conjuntos, Gomes et al. identifican procesos de búsqueda, emparejamiento, selección conjunta y construcción de conexiones para regular carteras de proyectos \cite{gomes2023}. Tereshchenko et al. proponen una secuencia de definición de objetivos, análisis de actores, marco jurídico, revisión de experiencias y reajuste \cite{tereshchenko2024}. El primer trabajo ofrece evidencia sobre regulación interorganizativa; el segundo aporta una orientación práctica que requiere evaluación en cada entorno.
+
+La continuidad también depende de incentivos. El estudio de Liu sobre 398 empresas chinas relaciona la disposición a participar con expectativas, autoeficacia y percepción de desequilibrio entre socios \cite{liuhumanresources2025}. La perspectiva de simbiosis de Liu et al. identifica coordinación de recursos, comunicación, alineación de intereses y apoyo organizacional \cite{liusymbiosis2025}. En ambos casos, facilitar información es una parte de la relación; la participación sostenida exige que los actores perciban condiciones aceptables de intercambio.
+
+Cao et al. ofrecen una explicación conceptual de tensiones persistentes de identidad, desempeño y organización \cite{selinacao2026}. Su propuesta permite interpretar los conflictos como condiciones que deben gestionarse durante la colaboración. Por su carácter conceptual, no demuestra que una determinada arquitectura de datos o plataforma produzca mejores resultados.
+
+\subsection{Digitalización y desarrollo de capacidades}
+Rossi et al. estudian cuatro intermediarios públicos de Francia y Reino Unido vinculados al Internet de las cosas. Identifican cambios en sus modelos de negocio apoyados en conocimiento especializado, legitimidad y recursos de largo plazo \cite{rossi2022}. Sala-Vilar et al., mediante métodos mixtos con intermediarios daneses, encuentran que disponer de recursos digitales se relaciona con la intención de ampliar servicios, mientras las alianzas existentes no garantizan el apoyo técnico necesario \cite{salavilar2024}. Digitalizar la intermediación implica desarrollar capacidades de la organización que presta el servicio.
+
+Compagnucci y Spigarelli articulan personas, cultura, gobernanza y colaboración en una hoja de ruta basada en nueve instituciones europeas. La investigación combina cuestionarios y grupos focales, pero reconoce que su heterogeneidad institucional limita la generalización y que la eficacia de la propuesta requiere evaluación posterior \cite{compagnucci2024}. Su aporte respalda la integración entre servicio digital y responsabilidad institucional, sin ofrecer una receta transferible sin adaptación.
+
+Pertenbreiter et al. analizan 78 publicaciones y diez plataformas utilizadas en la práctica para distinguir mecanismos de gestión de colaboración, conocimiento, aprendizaje y procesos de innovación \cite{pertenbreiter2026}. Esta clasificación orienta la comparación funcional: dos plataformas con interfaces similares pueden apoyar procesos de aprendizaje y coordinación diferentes. No implica que todas las funciones deban incorporarse en cualquier proyecto académico.
+
+Hafeez et al. diferencian mecanismos de colaboración con actores de la cadena de valor y con ecosistemas o plataformas en la transformación digital de pequeñas y medianas empresas \cite{hafeez2025}. Secundo et al. estudian ocho empresas italianas participantes en retos universidad-empresa y relacionan prácticas de inspiración, investigación, ideación y evaluación con capacidades para reconocer, aprovechar y reorganizar oportunidades digitales \cite{secundo2026}. La comparación sitúa el valor en las prácticas de intercambio y aprendizaje, además de la tecnología disponible.
+
+Oladimeji y Eteng desarrollan una herramienta distribuida cuya prueba integra tres servidores y permite conformar equipos de investigación \cite{oladimeji2022}. Esa evidencia acredita un funcionamiento técnico acotado; no demuestra efectos sobre confianza, aprendizaje o sostenibilidad de alianzas. De manera semejante, el marco de Kriz et al. para innovación de servicios con inteligencia artificial surge de casos ilustrativos y debe interpretarse dentro de ese ámbito \cite{kriz2026}.
+
+\subsection{Resultados de investigación y comercialización}
+Los resultados comerciales requieren indicadores propios. Temel et al. relacionan intermediarios universitarios y desempeño en patentes en Turquía \cite{temel2021}; Kang et al. examinan parques científicos universitarios y patentes conjuntas en China \cite{kang2025}. Estos estudios aportan evidencia sobre comercialización y vínculos de investigación, pero las patentes no miden directamente la calidad de un proyecto de aula.
+
+Tolin y Piccaluga estudian 47 universidades italianas mediante análisis configuracional y muestran que los instrumentos para superar brechas financieras y de gestión operan junto con otras condiciones organizativas \cite{tolin2025}. Martínez-Ardila et al. relacionan colaboraciones y experiencias previas con creación de empresas derivadas en 108 universidades \cite{martinez2023}. La revisión de Romero-Sánchez et al. complementa ese dominio al examinar la literatura sobre empresas derivadas universitarias \cite{romerosanchez2024}. Estos trabajos no permiten atribuir los resultados a una plataforma aislada.
+
+Yin et al. analizan 177 colaboraciones y distinguen el papel mediador del capital humano, relacional y estructural según el tipo de vinculación y desempeño \cite{yin2023}. Wang y Lu encuentran una relación no lineal entre rotación de participantes y transferencia en comunidades de innovación chinas \cite{wang2021}. En consecuencia, ni aumentar contactos ni mantener una composición totalmente estable constituyen criterios suficientes de éxito.
+
+Yang et al. examinan una política china de gobernanza de propiedad intelectual y la transferencia de patentes académicas \cite{yang2025}. Li y Li, en diez equipos de empresas derivadas, proponen mecanismos de conexión entre docentes, estudiantes y transferencia \cite{li2026}. La participación estudiantil de este segundo trabajo no convierte sus resultados comerciales en evidencia equivalente a evaluación curricular: el propósito y la unidad de análisis siguen siendo distintos.
+
+\subsection{Colaboración formativa y valor de los proyectos académicos}
+Borah et al. combinan nueve estudios de caso y 53 entrevistas con análisis de 2.280 instituciones; evalúan competencias de empleabilidad en un subconjunto de 486. Sus resultados apoyan la relevancia de las colaboraciones docentes, condicionadas por características institucionales y vínculos con la industria \cite{borah2021}. La evidencia es más pertinente para el objetivo formativo que un indicador comercial, aunque su contexto indio limita la transferencia directa a otras universidades.
+
+Bragelien y Nazar estudian un evento de emparejamiento para prácticas mediante 28 respuestas abiertas recogidas inmediatamente después. Los participantes valoran la organización y la relevancia de los contactos, y señalan presión temporal \cite{bragelien2026}. Este hallazgo permite discutir el diseño de la interacción, pero no acredita aprendizaje duradero ni éxito posterior de las prácticas.
+
+Osorno-Hinojosa et al. analizan experiencias de innovación abierta en Nicaragua mediante observación, talleres y entrevistas. Encuentran diferencias entre valor esperado y percibido, junto con aprendizaje en proyectos y organizaciones \cite{osorno2022}. Su contribución consiste en mostrar que obtener una solución técnica y desarrollar capacidades son resultados relacionados, pero diferentes. La evaluación formativa debe poder reconocer ambos sin dar por demostrada la implementación definitiva de cada solución.
+
+Akimov et al., al revisar 48 estudios, identifican vacíos relativos a competencias como pensamiento crítico, autoevaluación y aprendizaje sobre el propio aprendizaje \cite{akimov2023}. La revisión de Bejarano et al. relaciona innovación abierta y transferencia mediante factores de conocimiento, recursos, capacidades y gestión \cite{bejarano2023}. En conjunto, estos trabajos respaldan vincular los objetivos de un reto con las capacidades de los participantes y con condiciones de acompañamiento, en lugar de valorar únicamente el producto entregado.
+
+\subsection{Síntesis e implicaciones conceptuales}
+La comparación permite organizar las implicaciones en cuatro dimensiones analíticas: traducción y delimitación de oportunidades; coordinación y gobernanza; aprendizaje y capacidades; y evaluación diferenciada de resultados. Estas dimensiones son una síntesis interpretativa de la presente revisión, no una taxonomía validada ni una arquitectura de software. La Tabla~\ref{tab:sintesis} explicita su fundamento y alcance.
+
+\begin{table*}[t]
+\centering
+\caption{Implicaciones de la síntesis para colaboraciones académicas.}
+\label{tab:sintesis}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.7cm}*{3}{>{\raggedright\arraybackslash}X}@{}}
+\toprule
+\textbf{Dimensión} & \textbf{Fundamento} & \textbf{Implicación propuesta} & \textbf{Límite de interpretación}\\
+\midrule
+Traducción y delimitación & Obstáculos de inicio y necesidad de traducción especializada \cite{schneider2024,vermicelli2025}. & Aclarar problema, participantes y alcance antes de vincular un equipo. & Una coincidencia temática no acredita viabilidad.\\
+Coordinación y gobernanza & Funciones por etapas y configuraciones de acuerdos \cite{sun2025,lee2024}. & Explicitar responsabilidades, decisiones y condiciones de continuidad. & El marco contractual depende del contexto.\\
+Aprendizaje y capacidades & Evidencia formativa y prácticas de conocimiento \cite{borah2021,secundo2026}. & Relacionar el reto con objetivos de aprendizaje y acompañamiento. & Los hallazgos no prueban efectos en cualquier curso.\\
+Evaluación diferenciada & Diferencias entre valor esperado, percibido y resultados de transferencia \cite{osorno2022,compagnucci2024}. & Separar participación, productos, aprendizaje y utilización posterior. & Los registros de actividad no equivalen a impacto.\\
+\bottomrule
+\end{tabularx}
+\fuente{Síntesis interpretativa de las publicaciones citadas.}
+\end{table*}
+
+La consideración de resultados múltiples coincide con el marco conceptual de De Silva et al. sobre creación simultánea de valor social y empresarial \cite{desilva2021}. Johnson et al. señalan, en su revisión de ecosistemas centrados en universidades, la limitada representación de la perspectiva empresarial \cite{johnson2026}. Esto sugiere incluir expectativas de organizaciones y participantes al evaluar una colaboración, evitando definir su valor únicamente desde la universidad.
+
+Los modelos tampoco forman una secuencia universal. Liu et al. relacionan la selección de modalidades de colaboración con recursos de los actores y vínculos institucionales en parques industriales chinos \cite{liumodels2026}. Shin et al. muestran, mediante datos de redes sociales de un programa finlandés, que mayor diversidad del discurso no implica necesariamente más interacción entre grupos \cite{shin2023}. La síntesis editorial de Yström et al. sitúa estas relaciones en niveles individual, organizativo y de ecosistema \cite{ystrom2025}. Estos contrastes refuerzan la necesidad de distinguir visibilidad, interacción y resultados efectivos.
+
+\subsection{Limitaciones y agenda de investigación}
+El corpus procede de exportaciones disponibles y de una selección temática previa cuya trazabilidad de búsqueda es incompleta. Existe riesgo de sesgo de cobertura y selección; el número de registros no representa el universo de publicaciones sobre el tema. El acceso predominante a resúmenes impide evaluar de forma uniforme instrumentos, validez interna y limitaciones de cada estudio. Las revisiones incluidas pueden compartir estudios primarios, por lo que sus coincidencias no deben interpretarse como evidencia independiente acumulada.
+
+Las variantes terminológicas, la ausencia de configuraciones originales y las etiquetas parcialmente ocultas restringen la reproducibilidad y lectura de las redes. Asimismo, la heterogeneidad de contextos y medidas impide comparar directamente magnitudes de efecto o atribuir causalidad a la intermediación digital. Las implicaciones propuestas requieren contrastación en proyectos académicos concretos.
+
+Una agenda pertinente comprende documentar búsquedas reproducibles, ampliar la lectura a texto completo, normalizar palabras clave y conservar los archivos de red. En el plano empírico, conviene evaluar longitudinalmente el paso del contacto inicial a la colaboración, el aprendizaje logrado, la continuidad de los participantes y la utilización de los resultados. Así podría examinarse qué aporta cada mecanismo digital respecto del acompañamiento institucional y bajo qué condiciones lo hace.
 
 \section{Conclusiones}
-La evidencia consultada reporta más de 1.428 resultados identificados, mientras que el conjunto verificable del repositorio permitió consolidar 200 publicaciones únicas. La selección de 50 trabajos recientes del corpus y dos artículos de Revista Ingenio satisface el mínimo bibliográfico exigido para un artículo de revisión y mantiene correspondencia entre citas y referencias.
+El análisis del corpus identifica una presencia destacada de innovación abierta y transferencia de conocimiento, junto con literatura sobre intermediarios, capacidades y transformación digital. Esa estructura describe la selección disponible y no acredita por sí sola tendencias generales del campo.
 
-La estructura temática se concentra en innovación abierta, transferencia de conocimiento y tecnología, colaboración universidad-empresa, intermediarios y transformación digital. Los mapas revelan un núcleo consolidado y una periferia que incorpora capacidades, plataformas, inteligencia artificial, pequeñas y medianas empresas y sostenibilidad.
+La síntesis muestra que la intermediación comprende traducción de necesidades, coordinación, desarrollo de capacidades y evaluación. Su contribución depende del propósito de la colaboración y de las condiciones institucionales. La evidencia sobre investigación y comercialización aporta mecanismos relevantes, pero requiere adaptación cuando el objetivo principal es formativo.
 
-se derivan cuatro dimensiones: estructuración de oportunidades, gestión de actores y reglas, soporte a la interacción y trazabilidad de resultados. El emparejamiento debe conservar la mediación docente y diferenciar el interés inicial de la vinculación académica formal.
+Para proyectos académicos, las orientaciones más consistentes son explicitar el alcance del reto, sostener la mediación humana, vincular actividades con aprendizaje y distinguir participación, productos y utilización posterior. Las cuatro dimensiones propuestas organizan estas implicaciones como un marco conceptual sujeto a validación. Su alcance permanece condicionado por la selección documental, el acceso desigual a textos completos y la reproducibilidad parcial de las visualizaciones.
 
-
-
-% =========================================================================
-% REFERENCIAS BIBLIOGRÁFICAS (Norma IEEE)
-% =========================================================================
+\begingroup
+\raggedright
 \bibliographystyle{IEEEtran}
 \bibliography{referencias}
-
+\endgroup
 \end{document}
